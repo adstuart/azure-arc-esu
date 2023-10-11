@@ -105,5 +105,5 @@ In general, keep things simple and use the local Internet breakout method (with 
 |`*.his.arc.azure.com`|<span style="color:green">Metadata and hybrid identity services</span>|Always| Yes |Yes |Yes |Yes |
 |`*.guestconfiguration.azure.com`|<span style="color:green">Extension management and guest configuration services</span> |Always| Yes |Yes |Yes |Yes |
 
-
+-
 
