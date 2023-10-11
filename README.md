@@ -8,10 +8,6 @@ _This article is co-authored by Microsoft colleagues Cynthia Treger, Carl Syner 
 - [Context](#context)
 - [Introduction](#introduction)
 - [Endpoint requirements](#endpoint-requirements)
-    - [<span style="color:red">Agent install</span>](#span-stylecolorredagent-installspan)
-    - [<span style="color:blue">AAD / Entra ID</span>](#span-stylecolorblueaad--entra-idspan)
-    - [<span style="color:purple">Azure Resource Manager (ARM)</span>](#span-stylecolorpurpleazure-resource-manager-armspan)
-    - [<span style="color:green">Azure ARC</span>](#span-stylecolorgreenazure-arcspan)
 - [Connectivity options](#connectivity-options)
     - [Internet Routed (Local breakout)](#internet-routed-local-breakout)
     - [Proxy Onprem](#proxy-onprem)
@@ -36,23 +32,6 @@ The main output of this article, it to map the possible connectivity methods to 
 The reduced list of endpoints required for ESU is maintained on the official Azure docs site [here](https://learn.microsoft.com/en-us/azure/azure-arc/servers/network-requirements?tabs=azure-cloud#subset-of-endpoints-for-esu-only). I have copied the table below, and highlighted the different categories.
 
 ![](images/2023-10-11-10-59-44.png)
-
-## <span style="color:red">Agent install</span>
-
-Pull agent install files down over Internet from Microsoft Download centre (via proxy or not), orchestrated manually or at [scale](https://learn.microsoft.com/en-us/azure/azure-arc/servers/deployment-options#onboarding-methods). 
-
-
-## <span style="color:blue">AAD / Entra ID</span>
-
-Authentication/authorization provided by Entra ID. Almost defiantly already in place within your network if working with other Microsoft services such as M365.
-
-## <span style="color:purple">Azure Resource Manager (ARM)</span>
-
-Register/re-register ARC enabled VM in Azure Portal.
-
-## <span style="color:green">Azure ARC</span>
-
-Core focus of this article, guest management and identity etc
 
 # Connectivity options
 
