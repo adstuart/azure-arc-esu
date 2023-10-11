@@ -1,10 +1,10 @@
-# Azure ARC ESU Network Considerations
+# ESU enabled by Azure Arc, Network Considerations
 
 _This article is co-authored by Microsoft colleagues Cynthia Treger, Carl Syner and Joachim Gomard._
 
 <!-- TOC -->
 
-- [Azure ARC ESU Network Considerations](#azure-arc-esu-network-considerations)
+- [ESU enabled by Azure Arc, Network Considerations](#esu-enabled-by-azure-arc-network-considerations)
 - [Context](#context)
 - [Introduction](#introduction)
 - [Endpoint requirements](#endpoint-requirements)
@@ -20,7 +20,7 @@ _This article is co-authored by Microsoft colleagues Cynthia Treger, Carl Syner 
 
 # Context
 
-Please see overviews provided elsewhere, [example](https://techcommunity.microsoft.com/t5/azure-arc-blog/generally-available-windows-server-2012-and-2012-r2-extended/ba-p/3930712), but in short, there is increased focus on ARC-enabling On-Premises resources at the time of writing, and this in turn drives discussion on networking requirements for the Connected Machine agent.
+Please see overviews provided elsewhere, [example](https://techcommunity.microsoft.com/t5/azure-arc-blog/generally-available-windows-server-2012-and-2012-r2-extended/ba-p/3930712), but in short, there is increased focus on Arc-enabling On-Premises resources at the time of writing, and this in turn drives discussion on networking requirements for the Connected Machine agent.
 
 # Introduction
 The main output of this article, it to map the possible connectivity methods to Azure Endpoints that the agent communicates with. (Not all endpoints can leverage all methods). We will also discuss the pros/cons of each connectivity method, and why a customer may use one over another.
@@ -61,13 +61,13 @@ An example of an Azure hosted proxy solution is Azure Firewall Explicit proxy wh
 
 ![](images/2023-10-11-11-28-18.png)
 
-It is also possible to leverage a Private Hybrid connection natively (without Proxy) for those services that support [Azure Private Link](https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns). If the customer has carried out the requisite DNS integration, then upon the Agent contacting PL-supported FQDN, a Private IP address will be returned (denoting the Private Endpoint in the customers Azure VNet), rather than a Public IP. This does not require use of a Proxy. It is however only supported for ARM and ARC endpoints categories. 
+It is also possible to leverage a Private Hybrid connection natively (without Proxy) for those services that support [Azure Private Link](https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns). If the customer has carried out the requisite DNS integration, then upon the Agent contacting PL-supported FQDN, a Private IP address will be returned (denoting the Private Endpoint in the customers Azure VNet), rather than a Public IP. This does not require use of a Proxy. It is however only supported for ARM and Arc endpoints categories. 
 
 ## ExpressRoute Microsoft Peering
 
 ![](images/2023-10-11-11-43-52.png)
 
-If you happen to be using the ExpressRoute Microsoft Peering, you in effect have another route to communicate with Public IPs owned by Microsoft. You scope which IP addresses you wish to receive using [Route Filters](https://learn.microsoft.com/en-us/azure/expressroute/how-to-routefilter-portal). It is possible to attach to a subset of the required endpoints using this method, specifically Azure AD which has its own dedicated BGP community, and Azure ARC, which would require the use of the full Azure Regional community for the region where your ARC resources are specified. However, this approach has significant complexities, and in general should be avoided, as it will impact how your entire network routes traffic to all destinations scoped within the received IP addresses (not just the agent communication scenario discussed here)
+If you happen to be using the ExpressRoute Microsoft Peering, you in effect have another route to communicate with Public IPs owned by Microsoft. You scope which IP addresses you wish to receive using [Route Filters](https://learn.microsoft.com/en-us/azure/expressroute/how-to-routefilter-portal). It is possible to attach to a subset of the required endpoints using this method, specifically Azure AD which has its own dedicated BGP community, and Azure Arc, which would require the use of the full Azure Regional community for the region where your Arc resources are specified. However, this approach has significant complexities, and in general should be avoided, as it will impact how your entire network routes traffic to all destinations scoped within the received IP addresses (not just the agent communication scenario discussed here)
 
 # Summary
 
