@@ -98,8 +98,8 @@ In general, keep things simple and use the local Internet breakout method (with 
 |---------|---------|---------|---------|---------|---------|
 |`aka.ms`|<span style="color:red">Used to resolve the download script during installation</span>| Yes | Yes |No |No |
 |`download.microsoft.com`|<span style="color:red">Used to download the Windows installation package</span>| Yes |Yes |No |No |
-|`login.windows.net`|<span style="color:blue">Azure Active Directory</span>|Always| Yes |Yes |No |Yes |
-|`login.microsoftonline.com`|<span style="color:blue">Azure Active Directory</span>|Always| Yes |Yes |No |Yes |
+|`login.windows.net`|<span style="color:blue">Azure Active Directory</span>| Yes |Yes |No |Yes |
+|`login.microsoftonline.com`|<span style="color:blue">Azure Active Directory</span>| Yes |Yes |No |Yes |
 |`aadcdn.msftauth.net`|<span style="color:blue">Azure portal authentication</span>| Yes |Yes |No |Yes |
 |`management.azure.com`|<span style="color:purple">Azure Resource Manager - to create or delete the Arc server resource</span>| Yes |Yes |Yes |No |
 |`*.his.arc.azure.com`|<span style="color:green">Metadata and hybrid identity services</span>| Yes |Yes |Yes |Yes |
