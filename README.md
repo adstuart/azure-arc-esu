@@ -94,16 +94,16 @@ If you happen to be using the ExpressRoute Microsoft Peering, you in effect have
 
 In general, keep things simple and use the local Internet breakout method (with or without Proxy) if you can. Otherwise review the options for Private Connectivity as posed in this document. The following matrix provides a summary of the endpoint requirements along with possible connectivity options.
 
-| Agent resource | Description | When required| Internet Routed | Proxy (Onprem or Azure) | Private Hybrid (via Private Endpoint) | ER Microsoft Peering |
-|---------|---------|--------|---------|---------|---------|---------|
-|`aka.ms`|<span style="color:red">Used to resolve the download script during installation|At installation time, only</span>| Yes | Yes |No |No |
-|`download.microsoft.com`|<span style="color:red">Used to download the Windows installation package|At installation time, only</span>| Yes |Yes |No |No |
+| Agent resource | Description | Internet Routed | Proxy (Onprem or Azure) | Private Hybrid (via Private Endpoint) | ER Microsoft Peering |
+|---------|---------|---------|---------|---------|---------|
+|`aka.ms`|<span style="color:red">Used to resolve the download script during installation</span>| Yes | Yes |No |No |
+|`download.microsoft.com`|<span style="color:red">Used to download the Windows installation package</span>| Yes |Yes |No |No |
 |`login.windows.net`|<span style="color:blue">Azure Active Directory</span>|Always| Yes |Yes |No |Yes |
 |`login.microsoftonline.com`|<span style="color:blue">Azure Active Directory</span>|Always| Yes |Yes |No |Yes |
-|`aadcdn.msftauth.net`|<span style="color:blue">Azure portal authentication</span>|Always| Yes |Yes |No |Yes |
-|`management.azure.com`|<span style="color:purple">Azure Resource Manager - to create or delete the Arc server resource</span>|When connecting or disconnecting a server, only| Yes |Yes |Yes |No |
-|`*.his.arc.azure.com`|<span style="color:green">Metadata and hybrid identity services</span>|Always| Yes |Yes |Yes |Yes |
-|`*.guestconfiguration.azure.com`|<span style="color:green">Extension management and guest configuration services</span> |Always| Yes |Yes |Yes |Yes |
+|`aadcdn.msftauth.net`|<span style="color:blue">Azure portal authentication</span>| Yes |Yes |No |Yes |
+|`management.azure.com`|<span style="color:purple">Azure Resource Manager - to create or delete the Arc server resource</span>| Yes |Yes |Yes |No |
+|`*.his.arc.azure.com`|<span style="color:green">Metadata and hybrid identity services</span>| Yes |Yes |Yes |Yes |
+|`*.guestconfiguration.azure.com`|<span style="color:green">Extension management and guest configuration services</span> | Yes |Yes |Yes |Yes |
 
 
 
