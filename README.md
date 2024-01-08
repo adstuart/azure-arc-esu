@@ -49,6 +49,8 @@ The Connected Machine agent has full support for proxy definition. See [here](ht
 
 After sending the traffic to a proxy server located within the customers internal network, the flow is then identical to that of the Internet Routed model, with traffic flowing over the Internet towards Azure. This model would also apply to cloud-hosted proxy services such as zScaler.
 
+> Note the existing considerations for use of a proxy as per official docs including current lack of support for Proxy [Authentication](https://learn.microsoft.com/en-us/azure/azure-arc/servers/manage-agent?tabs=windows#update-or-remove-proxy-settings:~:text=for%20the%20agent.-,Note,-Azure%20Arc%2Denabled). 
+
 ## Proxy in Azure
 
 ![](images/2023-10-11-11-22-29.png)
@@ -56,6 +58,8 @@ After sending the traffic to a proxy server located within the customers interna
 By locating the proxy server inside Azure, we are able to leverage an existing Private Hybrid connection (ExpressRoute Private Peering, S2S-VPN, SD-WAN etc) whilst retaining connectivity via the public endpoints of all Azure services. This may be of interest to customers (E.g regulated, FSI) who have specific requirements that preclude the use of Public Internet for On-Prem to Cloud communication. 
 
 An example of an Azure hosted proxy solution is Azure Firewall Explicit proxy which is currently in [Preview](https://learn.microsoft.com/en-us/azure/firewall/explicit-proxy). 
+
+> Note the existing considerations for use of a proxy as per official docs including current lack of support for Proxy [Authentication](https://learn.microsoft.com/en-us/azure/azure-arc/servers/manage-agent?tabs=windows#update-or-remove-proxy-settings:~:text=for%20the%20agent.-,Note,-Azure%20Arc%2Denabled). 
 
 ## Private Hybrid (ExpressRoute Private Peering or S2S VPN)
 
