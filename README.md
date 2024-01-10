@@ -87,6 +87,7 @@ In general, keep things simple and use the local Internet breakout method (with 
 |`management.azure.com`|<span style="color:purple">Azure Resource Manager - to create or delete the Arc server resource</span>| Yes |Yes |Yes |No |
 |`*.his.arc.azure.com`|<span style="color:green">Metadata and hybrid identity services</span>| Yes |Yes |Yes |Yes |
 |`*.guestconfiguration.azure.com`|<span style="color:green">Extension management and guest configuration services</span> | Yes |Yes |Yes |Yes |
+|`microsoft.com/pkiops/certs`|<span style="color:green">Certificate download for ESUs</span> | Yes |Yes |No |No |
 
 
 
