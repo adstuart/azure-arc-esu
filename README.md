@@ -88,6 +88,6 @@ In general, keep things simple and use the local Internet breakout method (with 
 |`*.his.arc.azure.com`|<span style="color:green">Metadata and hybrid identity services</span>| Yes |Yes |Yes |Yes |
 |`*.guestconfiguration.azure.com`|<span style="color:green">Extension management and guest configuration services</span> | Yes |Yes |Yes |Yes |
 |`microsoft.com/pkiops/certs`|<span style="color:green">Certificate download for ESUs</span> | Yes |Yes |No |No |
-
+|`san-af-<region>-prod.azurewebsites.net`|<span style="color:green">Azure Arc data processing service ([SQL](https://learn.microsoft.com/en-us/sql/sql-server/azure-arc/prerequisites?view=sql-server-ver16&tabs=azure#connect-to-azure-arc-data-processing-service) only)*</span> | Yes |Yes |[No](https://learn.microsoft.com/en-us/sql/sql-server/azure-arc/prerequisites?view=sql-server-ver16&tabs=azure#connect-to-azure-arc-data-processing-service:~:text=locations%20%2Do%20table-,Note,-You%20can%27t%20use) |Yes |
 
 
